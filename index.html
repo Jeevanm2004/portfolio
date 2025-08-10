@@ -293,6 +293,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .project-card {
@@ -310,13 +312,30 @@
 
         .project-image {
             height: 200px;
-            background: linear-gradient(45deg, #2563eb, #1d4ed8);
+            background: linear-gradient(45deg, #10b981, #059669);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 1.2rem;
             font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '🤖👁️';
+            font-size: 3rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
         }
 
         .project-info {
@@ -331,26 +350,86 @@
 
         .project-description {
             color: #6b7280;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin: 2px;
+            font-weight: 500;
+        }
+
+        .project-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-features h4 {
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .project-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-features li {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .project-features li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
         .project-links {
             display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .btn-secondary {
-            background: #2563eb;
+            background: #10b981;
             color: white;
-            padding: 8px 20px;
+            padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
             font-size: 0.9rem;
-            transition: background 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .btn-secondary:hover {
-            background: #1d4ed8;
+            background: #059669;
+            transform: translateY(-1px);
+        }
+
+        .btn-github {
+            background: #374151;
+        }
+
+        .btn-github:hover {
+            background: #1f2937;
         }
 
         /* Contact Section */
@@ -510,6 +589,10 @@
                 margin: 0;
                 margin-left: 40px;
             }
+
+            .project-links {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -621,50 +704,47 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title">My Project</h2>
             <div class="projects-grid">
                 
                 <div class="project-card">
-                    <div class="project-image">Project 1</div>
+                    <div class="project-image">AI Vision Detector</div>
                     <div class="project-info">
-                        <h3 class="project-title">Full Stack E-Commerce Platform</h3>
+                        <h3 class="project-title">AI Vision Detector</h3>
                         <p class="project-description">
-                            A complete e-commerce solution with user authentication, product management, 
-                            shopping cart, payment integration, and admin dashboard. Built with React, Node.js, and MongoDB.
+                            A powerful, real-time object detection web application built with TensorFlow.js and the COCO-SSD model. 
+                            Detect and identify 80 different types of objects instantly through your webcam or by uploading images—all 
+                            running directly in your browser with zero installation required.
                         </p>
-                        <div class="project-links">
-                            <a href="#" class="btn-secondary">Live Demo</a>
-                            <a href="#" class="btn-secondary">GitHub</a>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">TensorFlow.js</span>
+                            <span class="tech-tag">COCO-SSD Model</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">WebRTC</span>
                         </div>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-image">Project 2</div>
-                    <div class="project-info">
-                        <h3 class="project-title">Social Media Dashboard</h3>
-                        <p class="project-description">
-                            A comprehensive social media management platform with real-time analytics, 
-                            post scheduling, and user engagement tracking. Built with MERN stack and Socket.io.
-                        </p>
-                        <div class="project-links">
-                            <a href="#" class="btn-secondary">Live Demo</a>
-                            <a href="#" class="btn-secondary">GitHub</a>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Real-time webcam object detection</li>
+                                <li>Image upload & analysis</li>
+                                <li>80+ object classes detection</li>
+                                <li>Browser-based, no installation needed</li>
+                                <li>Cross-platform compatibility</li>
+                                <li>30-60 FPS performance</li>
+                            </ul>
                         </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">Project 3</div>
-                    <div class="project-info">
-                        <h3 class="project-title">Task Management System</h3>
-                        <p class="project-description">
-                            A collaborative project management tool with team features, real-time updates, 
-                            file sharing, and progress tracking. Features REST API and database optimization.
-                        </p>
+                        
                         <div class="project-links">
-                            <a href="#" class="btn-secondary">Live Demo</a>
-                            <a href="#" class="btn-secondary">GitHub</a>
+                            <a href="https://jeevanm2004.github.io/ai-vision-detector/" class="btn-secondary" target="_blank">
+                                🚀 Live Demo
+                            </a>
+                            <a href="https://github.com/Jeevanm2004/ai-vision-detector" class="btn-secondary btn-github" target="_blank">
+                                💻 GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
