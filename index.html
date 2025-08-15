@@ -291,9 +291,9 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -333,9 +333,23 @@
             animation: pulse 2s infinite;
         }
 
+        .project-image.resume-analyzer {
+            background: linear-gradient(45deg, #8b5cf6, #7c3aed);
+        }
+
+        .project-image.resume-analyzer::before {
+            content: '📄🧠';
+            animation: rotate 3s linear infinite;
+        }
+
         @keyframes pulse {
             0%, 100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1); }
             50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        @keyframes rotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         .project-info {
@@ -367,6 +381,10 @@
             font-size: 0.8rem;
             margin: 2px;
             font-weight: 500;
+        }
+
+        .tech-tag.purple {
+            background: #8b5cf6;
         }
 
         .project-features {
@@ -422,6 +440,14 @@
         .btn-secondary:hover {
             background: #059669;
             transform: translateY(-1px);
+        }
+
+        .btn-purple {
+            background: #8b5cf6;
+        }
+
+        .btn-purple:hover {
+            background: #7c3aed;
         }
 
         .btn-github {
@@ -620,8 +646,8 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Hi, I'm <span class="highlight">Jeevan M</span></h1>
-            <p>Full Stack Web Developer</p>
-            <p>I build complete web applications from frontend to backend, creating seamless digital experiences.</p>
+            <p>Full Stack Web Developer & AI Enthusiast</p>
+            <p>I build complete web applications from frontend to backend, creating seamless digital experiences powered by AI.</p>
             <a href="#projects" class="btn">View My Work</a>
         </div>
     </section>
@@ -638,7 +664,7 @@
                     </p>
                     <p>
                         From responsive user interfaces to robust server architectures, I enjoy working with the entire web development stack. 
-                        I'm always eager to learn new technologies and take on challenging projects.
+                        I'm always eager to learn new technologies and take on challenging projects, especially those involving AI integration.
                     </p>
                     
                     <div class="skills">
@@ -646,11 +672,15 @@
                         <div class="skills-list">
                             <span class="skill-item">JavaScript</span>
                             <span class="skill-item">React</span>
+                            <span class="skill-item">TypeScript</span>
                             <span class="skill-item">Node.js</span>
                             <span class="skill-item">Express</span>
                             <span class="skill-item">MongoDB</span>
                             <span class="skill-item">MySQL</span>
                             <span class="skill-item">Python</span>
+                            <span class="skill-item">AI Integration</span>
+                            <span class="skill-item">TensorFlow.js</span>
+                            <span class="skill-item">Google Gemini</span>
                             <span class="skill-item">HTML5</span>
                             <span class="skill-item">CSS3</span>
                             <span class="skill-item">Git</span>
@@ -675,7 +705,6 @@
                     <div class="education-content">
                         <h3 class="education-title">Bachelor of Engineering</h3>
                         <h4 class="education-institution">Bangalore Institute Of Technology</h4>
-
                     </div>
                 </div>
 
@@ -684,7 +713,6 @@
                     <div class="education-content">
                         <h3 class="education-title">Pre-University Course (PUC)</h3>
                         <h4 class="education-institution">Narayana PU College</h4>
-
                     </div>
                 </div>
 
@@ -693,7 +721,6 @@
                     <div class="education-content">
                         <h3 class="education-title">Secondary Education</h3>
                         <h4 class="education-institution">Widia Poorna Prajna School</h4>
-
                     </div>
                 </div>
 
@@ -704,9 +731,51 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">My Project</h2>
+            <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
                 
+                <!-- AI Resume & Job Match Analyzer -->
+                <div class="project-card">
+                    <div class="project-image resume-analyzer">AI Resume Analyzer</div>
+                    <div class="project-info">
+                        <h3 class="project-title">AI Resume & Job Match Analyzer</h3>
+                        <p class="project-description">
+                            A powerful AI-driven application that analyzes resumes using Google Gemini AI, providing comprehensive 
+                            ATS scoring and intelligent improvement suggestions to help job seekers optimize their resumes for better job matches.
+                        </p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag purple">Google Gemini AI</span>
+                            <span class="tech-tag purple">React 18</span>
+                            <span class="tech-tag purple">TypeScript</span>
+                            <span class="tech-tag purple">Vite</span>
+                            <span class="tech-tag purple">Tailwind CSS</span>
+                            <span class="tech-tag purple">PDF-Parse</span>
+                            <span class="tech-tag purple">Mammoth</span>
+                        </div>
+
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>AI-powered resume analysis using Google Gemini</li>
+                                <li>ATS compatibility scoring</li>
+                                <li>PDF & DOCX file support</li>
+                                <li>Real-time processing & insights</li>
+                                <li>Personalized improvement suggestions</li>
+                                <li>Modern responsive UI</li>
+                                <li>Secure & private processing</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://github.com/Jeevanm2004/ai-resume-job-match-analyzer" class="btn-secondary btn-purple" target="_blank">
+                                💻 GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Vision Detector -->
                 <div class="project-card">
                     <div class="project-image">AI Vision Detector</div>
                     <div class="project-info">
