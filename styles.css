@@ -317,7 +317,7 @@ section {
 }
 
 .project-image::before {
-    content: '🤖👁️';
+    content: '💰📊';
     font-size: 3rem;
     position: absolute;
     top: 50%;
@@ -326,15 +326,27 @@ section {
     animation: pulse 2s infinite;
 }
 
-.project-image.resume-analyzer {
-    background: linear-gradient(45deg, #8b5cf6, #7c3aed);
+/* Expense Tracker - Green Theme */
+.project-image.expense-tracker {
+    background: linear-gradient(45deg, #10b981, #059669);
 }
 
-.project-image.resume-analyzer::before {
-    content: '📄🧠';
+.project-image.expense-tracker::before {
+    content: '💰📊';
+    animation: pulse 2s infinite;
+}
+
+/* AI Vision Detector - Blue Theme */
+.project-image.ai-vision {
+    background: linear-gradient(45deg, #3b82f6, #2563eb);
+}
+
+.project-image.ai-vision::before {
+    content: '🤖👁️';
     animation: rotate 3s linear infinite;
 }
 
+/* Sentiment Analysis - Orange Theme */
 .project-image.sentiment-analyzer {
     background: linear-gradient(45deg, #f59e0b, #d97706);
 }
@@ -391,8 +403,13 @@ section {
     font-weight: 500;
 }
 
-.tech-tag.purple {
-    background: #8b5cf6;
+/* Tech Tag Color Themes */
+.tech-tag.green {
+    background: #10b981;
+}
+
+.tech-tag.blue {
+    background: #3b82f6;
 }
 
 .tech-tag.orange {
@@ -454,12 +471,21 @@ section {
     transform: translateY(-1px);
 }
 
-.btn-purple {
-    background: #8b5cf6;
+/* Button Color Themes */
+.btn-green {
+    background: #10b981;
 }
 
-.btn-purple:hover {
-    background: #7c3aed;
+.btn-green:hover {
+    background: #059669;
+}
+
+.btn-blue {
+    background: #3b82f6;
+}
+
+.btn-blue:hover {
+    background: #2563eb;
 }
 
 .btn-orange {
